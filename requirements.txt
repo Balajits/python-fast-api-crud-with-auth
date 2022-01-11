@@ -1,0 +1,9 @@
+fastapi == 0.70.1
+pydantic == 1.8.2
+python-dotenv == 0.19.2
+SQLAlchemy == 1.4.28
+SQLAlchemy-Utils == 0.37.9
+passlib == 1.7.4
+bcrypt == 3.2.0
+python-jose == 3.3.0
+cryptography == 36.0.1
