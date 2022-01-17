@@ -2,7 +2,6 @@ from typing import Optional
 from pydantic import BaseModel, EmailStr
 
 
-
 class User(BaseModel):
     name: str
     email: EmailStr
@@ -31,3 +30,7 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     id: Optional[str] = None
+
+class Password(BaseModel):
+    current_password: str
+    new_password: str

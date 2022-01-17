@@ -6,7 +6,7 @@ from api import User
 from api import Task
 import uvicorn
 
-app = FastAPI(title="My App")
+app = FastAPI(title="My App", description="Hello World", version="0.1")
 
 origins = ["*"]
 Base.metadata.create_all(bind=engine)
