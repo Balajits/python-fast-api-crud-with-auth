@@ -29,7 +29,7 @@ async def regiser_user(user: UserSchemas.User, db: Session = Depends(get_db)):
 @router.post("/login", status_code=status.HTTP_200_OK, response_model=UserSchemas.Token)
 async def login(user: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
     user_details = get_user_by_email(db, user.username)
-
+    print('user_details', user_details)
     if not user_details:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail={'error': 'email not exists'})
 

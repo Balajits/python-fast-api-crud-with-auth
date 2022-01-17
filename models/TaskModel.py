@@ -1,13 +1,10 @@
 from sqlalchemy.orm import relationship
-from database.database import Base
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from . import UserModel
 from sqlalchemy.sql.sqltypes import TIMESTAMP
 from sqlalchemy.sql.expression import text
-
+from database.db_base import Base
 class Task(Base):
-    __tablename__ = 'task'
-
     id = Column(Integer,primary_key = True, nullable = False)
     title = Column(String(100), nullable = False)
     description = Column(String(500), nullable = False)

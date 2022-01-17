@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from database.database import Base, engine, SessionLocal
+from database.database import engine
+from database.db_base import Base
 from api import User
 from api import Task
 import uvicorn

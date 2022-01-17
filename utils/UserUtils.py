@@ -24,6 +24,7 @@ def create_user(db: Session, user: UserSchemas.User):
 
 def get_user_by_email(db: Session, email: str):
     try:
+        print('yesss',email); 
         return db.query(UserModel.Users).filter(UserModel.Users.email == email).first()
     except Exception as e:
         return False, e

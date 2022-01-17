@@ -1,0 +1,8 @@
+Generic single-database configuration.
+
+#cmd
+
+to create mig -->  alembic revision -m "Add a column"
+run mig -->  alembic upgrade head  or alembic upgrade <<revision id>>
+from sqlalchmey --> alembic revision --autogenerate -m "add users reset_token field"
+

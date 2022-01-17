@@ -54,3 +54,13 @@ async def delete(id: int, db: session = Depends(get_db), current_user = Depends(
             raise HTTPException(status_code= 400, detail=f"Something went wrong")
     else:
         raise HTTPException(status_code=400, detail=task_details)
+
+
+@router.get('/get/{id}', status_code=status.HTTP_200_OK)
+async def get(id: int, db: session = Depends(get_db), current_user = Depends(Security.get_current_user)):
+    status, task = TaskUtils.get_task_by_id(db, id, current_user.id)
+
+    if status:
+        return {'status': True, 'msg': 'success', 'data': task}
+    else:
+        raise HTTPException(status_code=400, detail=task)
